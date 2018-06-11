@@ -13,10 +13,10 @@
 	{
 		$a=$_GET["valA"];
 		$b=$_GET["valB"];
-		$v=$a+$b;
-		$d=$a/$b;
-		$n=$a*$b;
-		$m=$a-$b;
+		$sucet=$a+$b;
+		$podiel=$a/$b;
+		$sucin=$a*$b;
+		$rozdiel=$a-$b;
 
 		if ($_GET["agree"]==off)
 		{
@@ -28,16 +28,16 @@
 
 		if(($_GET["operations"])=="basic")
 		{
-			echo "<DIV>Sucet: ".$a."+".$b."=".$v."</DIV>";
-			echo "<DIV>Rozdiel: ".$a."-".$b."=".$m."</DIV>";		
+			echo "<DIV>Sucet: ".$a."+".$b."=".$sucet."</DIV>";
+			echo "<DIV>Rozdiel: ".$a."-".$b."=".$rozdiel."</DIV>";		
 		}
 
 		else
 		{
-			echo "<DIV>Sucet: ".$a."+".$b."=".$v."</DIV>";
-			echo "<DIV>Podiel: ".$a."/".$b."=".$d."</DIV>";
-			echo "<DIV>Sucin: ".$a."*".$b."=".$n."</DIV>";
-			echo "<DIV>Rozdiel: ".$a."-".$b."=".$m."</DIV>";	
+			echo "<DIV>Sucet: ".$a."+".$b."=".$sucet."</DIV>";
+			echo "<DIV>Podiel: ".$a."/".$b."=".$podiel."</DIV>";
+			echo "<DIV>Sucin: ".$a."*".$b."=".$sucin."</DIV>";
+			echo "<DIV>Rozdiel: ".$a."-".$b."=".$rozdiel."</DIV>";	
 
 		$dotaz="INSERT INTO history (valA,valB) VALUES (".$a.",".$b.")";
 		$conn=mysqli_connect("localhost:3306", "root", "", "phpcalc");
